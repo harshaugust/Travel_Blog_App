@@ -1,0 +1,13 @@
+.form-whole{
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin: 2% 30%;
+    text-align: center;
+    background-color:bisque;
+}
+
+.one, .two, .three, .four{
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
