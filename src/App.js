@@ -10,12 +10,8 @@ function App() {
   return (
     <div>
        <Navigation />
-       <Router>
-          <Switch>
-          <Route exact path="/" component={Log}/>
-				  <Route exact path="/newlog" component={NewLog }/>
-          </Switch>
-       </Router>
+       <Log/>
+       <NewLog/>
     </div>
   );
 }
