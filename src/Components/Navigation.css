@@ -1,0 +1,12 @@
+.Main-Content{
+    display: flex;
+    justify-content: space-around;
+}
+
+.DP h2{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+    float: left;
+}
+
