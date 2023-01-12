@@ -14,7 +14,7 @@ export const NewLog = () =>{
 
     const imageHandle = (e) =>{
         console.log(e.target.files)
-        setImage(e.target.files[0].name)
+        setImage(URL.createObjectURL(e.target.files[0].name))
         
     }
 
@@ -36,34 +36,39 @@ export const NewLog = () =>{
     }
 
 
-    const addNewLog = (event) =>{
-        event.preventDefault();
-
-        setLog({
-            image,
-            title,
-            desc
-        })
-       // console.log(log)
-    }
-
     const url = 'http://localhost:3000/logs'
 
-    useEffect(()=>{
-      fetch(url,{
-        method: "Post",
-        headers : {
-            'Content-Type': 'application/json'},
-        body: JSON.stringify(log)
-      })
-      .then((response)=>{
-        response.json()
-        .then(res=>{
-            console.log(res)
+    let date = new Date();
+        let day = date.getDate();
+        let month = date.getMonth()+1;
+        let year = date.getFullYear(); 
+        var dateStr = day + "-" + month + "-" + year; 
+    
+    const addNewLog = (event) =>{
+        event.preventDefault();
+        
+        setLog({
+            img:image,
+            name:title,
+            date: dateStr,
+            desc:desc
         })
-      })
+    }
 
-    },[log])
+    useEffect(()=>{
+        fetch(url,{
+          method: "Post",
+          headers : {
+              'Content-Type': 'application/json'},
+          body: JSON.stringify(log)
+        })
+        .then((response)=>{
+          response.json()
+          .then(res=>{
+              console.log('Created')
+          })
+        })
+      },[log])    
 
     return (
             <form className="form-whole" onSubmit={addNewLog}>
@@ -77,10 +82,6 @@ export const NewLog = () =>{
                 <input type="text" id="name" name="nameofplace" value={title} onChange={titleHandle}/>
             </div>    
                
-            {/* <div className="three">
-                <label htmlFor="date">Date</label>
-                <input type="date" id="date" name="date" value={date} onChange={dateHandle}/>
-            </div>    */}
                 
             <div className="four">
                 <label htmlFor="desc">Description</label>
