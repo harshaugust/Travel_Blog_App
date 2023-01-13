@@ -18,7 +18,7 @@ export const Travel = [
         'id': 3,
         'img': 'https://images.unsplash.com/photo-1576542260349-626bf55262a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bW9udW1lbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
         'name': 'Statu of Liberty',
-        'date' : '07-01-2023',
+        'date' : '06-01-2023',
         'desc': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, corrupti!',
     },
 ]
