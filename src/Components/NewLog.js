@@ -30,7 +30,6 @@ export const NewLog = () =>{
 
     }
 
-
     return (
             <form action="" className="form-whole">
             <div className="one">
@@ -57,4 +56,3 @@ export const NewLog = () =>{
             </form>
     );
 }
-
