@@ -13,6 +13,9 @@ function App() {
        <Routes>
         <Route path="/" element={ <Log/> } />
         <Route path = "/new-log" element = {<NewLog />} />
+        {/* 
+        This is just a check.
+        */}
       </Routes>
     </div>
   );
